@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs
 
+import 'package:contacts_app/product/generated/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -50,13 +51,13 @@ class BaseTextField extends StatelessWidget {
   }
 
   InputDecoration _buildDecoration(BuildContext context) => InputDecoration(
-        fillColor: const Color(0xfff4f4f4),
+        fillColor: ColorName.pageColor,
         filled: true,
         contentPadding: const EdgeInsets.all(16),
         border: _buildBorder(context),
         enabledBorder: _buildBorder(context),
         hintText: hint,
-        hintStyle: const TextStyle(color: Color(0xffBABABA)),
+        hintStyle:  const TextStyle(color: ColorName.gray),
         floatingLabelBehavior: FloatingLabelBehavior.never,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,

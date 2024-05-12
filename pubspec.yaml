@@ -33,6 +33,11 @@ flutter_gen:
   output: lib/product/generated/
   integrations:
     flutter_svg: true
+  
+  colors:
+    inputs:
+      - assets/color/colors.xml
+
 
 flutter:
 
@@ -42,6 +47,7 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
+    - assets/color/colors.xml
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

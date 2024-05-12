@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs
 
+import 'package:contacts_app/product/generated/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -51,7 +52,7 @@ class _ChoseProfilPhotoState extends State<ChoseProfilPhoto> {
           side: BorderSide(color: Colors.grey.shade200),
         ),
         elevation: 0,
-        color: const Color(0xfff4f4f4),
+        color: ColorName.pageColor,
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Row(

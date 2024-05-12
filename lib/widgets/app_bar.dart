@@ -24,7 +24,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
       shadowColor: Colors.transparent,
       actions: [
         IconButton(
-          icon: Assets.svgImages.iconAdd.svg(),
+          icon: Assets.svg.iconAdd.svg(),
           onPressed: onAddButtonPressed,
         ),
       ],
