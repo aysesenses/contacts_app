@@ -1,5 +1,7 @@
+
 // ignore_for_file: public_member_api_docs
 
+import 'package:contacts_app/product/init/application_initialize.dart';
 import 'package:contacts_app/util/extensions.dart';
 import 'package:contacts_app/widgets/app_bar.dart';
 import 'package:contacts_app/widgets/bottom_sheet.dart';
@@ -10,7 +12,8 @@ import 'package:contacts_app/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-void main() {
+Future<void> main() async {
+  await ApplicationInitialize().make();
   runApp(const MyApp());
 }
 
