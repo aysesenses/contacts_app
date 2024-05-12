@@ -1,6 +1,6 @@
-
 // ignore_for_file: public_member_api_docs
 
+import 'package:contacts_app/product/generated/theme/custom_light_theme.dart';
 import 'package:contacts_app/product/init/application_initialize.dart';
 import 'package:contacts_app/util/extensions.dart';
 import 'package:contacts_app/widgets/app_bar.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
+      theme: CustomLightTheme().themeData,
       home: const MyHomePage(title: 'Contacts'),
     );
   }
