@@ -1,11 +1,13 @@
+// ignore_for_file: public_member_api_docs
+
+import 'package:contacts_app/util/extensions.dart';
 import 'package:contacts_app/widgets/app_bar.dart';
+import 'package:contacts_app/widgets/bottom_sheet.dart';
 import 'package:contacts_app/widgets/choose_profil_photo.dart';
 import 'package:contacts_app/widgets/form_widget.dart';
 import 'package:contacts_app/widgets/no_contacts.dart';
 import 'package:contacts_app/widgets/search_bar.dart';
-import 'package:contacts_app/widgets/bottom_sheet.dart';
 import 'package:flutter/material.dart';
-import 'package:contacts_app/util/extensions.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {
@@ -18,10 +20,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(),
-        home: const MyHomePage(title: "Contacts"));
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(),
+      home: const MyHomePage(title: 'Contacts'),
+    );
   }
 }
 
@@ -40,7 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBarWidget(
-          appTitle: widget.title, onAddButtonPressed: (() => _showModalBottomSheetScreen(context))),
+        appTitle: widget.title,
+        onAddButtonPressed: () => _showModalBottomSheetScreen(context),
+      ),
       body: Column(
         children: const <Widget>[
           SearchBarWidget(),
@@ -54,19 +59,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _showSnack() {
     context.showSnackbar(
-        "user added", Colors.green, SvgPicture.asset("assets/svg/badge_check.svg"));
+      'user added',
+      Colors.green,
+      SvgPicture.asset('assets/svg/badge_check.svg'),
+    );
   }
 
-  _showModalBottomSheetScreen(BuildContext context) {
+  Future<void> _showModalBottomSheetScreen(BuildContext context) async {
     return showModalBottomSheet(
       backgroundColor: Colors.transparent,
       context: context,
-      builder: ((context) => BottomSheetWidget(
-            isSmallBottomSheet: false,
-            onCancelPressed: onClickCancel,
-            onDonePressed: onClickDone,
-            bottomSheetContent: const UserAddForm(),
-          )),
+      builder: (context) => BottomSheetWidget(
+        isSmallBottomSheet: false,
+        onCancelPressed: onClickCancel,
+        onDonePressed: onClickDone,
+        bottomSheetContent: const UserAddForm(),
+      ),
       enableDrag: false,
       isDismissible: false,
       isScrollControlled: true,
@@ -75,9 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   ChoseProfilPhoto _chooseProfil() {
     return ChoseProfilPhoto(
-      cameraPressed: () => onClickCancel(),
-      galleryPressed: () => onClickCancel(),
-      cancelPressed: () => onClickCancel(),
+      cameraPressed: onClickCancel,
+      galleryPressed: onClickCancel,
+      cancelPressed: onClickCancel,
     );
   }
 

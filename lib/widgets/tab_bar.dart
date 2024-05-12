@@ -1,12 +1,14 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:flutter/material.dart';
 
 class TabBarWidget extends StatelessWidget {
   const TabBarWidget({
-    Key? key,
+    super.key,
     required this.onCancelPressed,
     required this.onDonePressed,
     this.title,
-  }) : super(key: key);
+  });
 
   final String? title;
   final VoidCallback? onCancelPressed;
@@ -19,16 +21,16 @@ class TabBarWidget extends StatelessWidget {
       children: [
         TextButton(
           onPressed: onCancelPressed,
-          child: const Text("Cancel"),
+          child: const Text('Cancel'),
         ),
         Text(
-          title ?? "",
+          title ?? '',
           style: _boldText(),
         ),
         TextButton(
           onPressed: onCancelPressed,
           child: Text(
-            "Done",
+            'Done',
             style: _boldText(),
           ),
         )

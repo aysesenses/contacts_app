@@ -1,22 +1,11 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class BaseTextField extends StatelessWidget {
-  final TextEditingController? controller;
-  final String? hint;
-  final bool obscureText;
-  final TextInputType keyboardType;
-  final Widget? suffixIcon;
-  final Widget? prefixIcon;
-  final FormFieldValidator<String>? validator;
-  final EdgeInsetsGeometry? padding;
-  final void Function(String)? onChanged;
-  final List<TextInputFormatter>? inputFormatters;
-  final bool autofocus;
-
-  const BaseTextField(
-    BuildContext context, {
-    Key? key,
+  const BaseTextField({
+    super.key,
     this.controller,
     this.hint,
     this.obscureText = false,
@@ -28,7 +17,18 @@ class BaseTextField extends StatelessWidget {
     this.onChanged,
     this.inputFormatters,
     this.autofocus = false,
-  }) : super(key: key);
+  });
+  final TextEditingController? controller;
+  final String? hint;
+  final bool obscureText;
+  final TextInputType keyboardType;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
+  final FormFieldValidator<String>? validator;
+  final EdgeInsetsGeometry? padding;
+  final void Function(String)? onChanged;
+  final List<TextInputFormatter>? inputFormatters;
+  final bool autofocus;
 
   @override
   Widget build(BuildContext context) {
@@ -50,19 +50,19 @@ class BaseTextField extends StatelessWidget {
   }
 
   InputDecoration _buildDecoration(BuildContext context) => InputDecoration(
-      fillColor: const Color(0xfff4f4f4),
-      filled: true,
-      contentPadding: const EdgeInsets.all(16),
-      border: _buildBorder(context),
-      enabledBorder: _buildBorder(context),
-      hintText: hint,
-      hintStyle: const TextStyle(color: Color(0xffBABABA)),
-      floatingLabelBehavior: FloatingLabelBehavior.never,
-      suffixIcon: suffixIcon,
-      prefixIcon: prefixIcon);
+        fillColor: const Color(0xfff4f4f4),
+        filled: true,
+        contentPadding: const EdgeInsets.all(16),
+        border: _buildBorder(context),
+        enabledBorder: _buildBorder(context),
+        hintText: hint,
+        hintStyle: const TextStyle(color: Color(0xffBABABA)),
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+        suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
+      );
 
   OutlineInputBorder _buildBorder(BuildContext context) => OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(color: Colors.black),
       );
 }

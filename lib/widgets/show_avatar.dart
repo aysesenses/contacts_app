@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,11 +10,11 @@ class ShowProfilAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Column(
         children: [
           SvgPicture.asset(
-            "assets/svg/profil.svg",
+            'assets/svg/profil.svg',
             width: 120,
           ),
           const SizedBox(height: 8),

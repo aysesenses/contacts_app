@@ -1,12 +1,14 @@
+// ignore_for_file: public_member_api_docs
+
+import 'package:contacts_app/util/assets_constant.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   const AppBarWidget({
-    Key? key,
+    super.key,
     required this.appTitle,
     required this.onAddButtonPressed,
-  }) : super(key: key);
+  });
 
   final String appTitle;
   final VoidCallback? onAddButtonPressed;
@@ -22,7 +24,7 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
       shadowColor: Colors.transparent,
       actions: [
         IconButton(
-          icon: SvgPicture.asset("assets/svg/icon_add.svg"),
+          icon: Assets.svgImages.iconAdd.svg(),
           onPressed: onAddButtonPressed,
         ),
       ],

@@ -1,4 +1,5 @@
-import 'package:contacts_app/widgets/tab_bar.dart';
+// ignore_for_file: public_member_api_docs
+
 import 'package:flutter/material.dart';
 
 class AddUserScreen extends StatefulWidget {
@@ -14,11 +15,7 @@ class _AddUserScreenState extends State<AddUserScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xffF4F4F4),
-        body: Column(
-          children: const [
-          //  TabBarWidget(),
-          ],
-        ),
+        body: Column(),
       ),
     );
   }
