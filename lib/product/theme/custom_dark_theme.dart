@@ -1,4 +1,4 @@
-import 'package:contacts_app/product/generated/theme/custom_theme.dart';
+import 'package:contacts_app/product/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 
 /// Custom light theme for project design

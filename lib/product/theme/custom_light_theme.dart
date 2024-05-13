@@ -1,5 +1,5 @@
-import 'package:contacts_app/product/generated/theme/custom_color_scheme.dart';
-import 'package:contacts_app/product/generated/theme/custom_theme.dart';
+import 'package:contacts_app/product/theme/custom_color_scheme.dart';
+import 'package:contacts_app/product/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

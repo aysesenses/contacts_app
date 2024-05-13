@@ -11,6 +11,16 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $AssetsColorGen {
+  const $AssetsColorGen();
+
+  /// File path: assets/color/colors.xml
+  String get colors => 'assets/color/colors.xml';
+
+  /// List of all assets
+  List<String> get values => [colors];
+}
+
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
@@ -37,6 +47,7 @@ class $AssetsSvgGen {
 class Assets {
   Assets._();
 
+  static const $AssetsColorGen color = $AssetsColorGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
