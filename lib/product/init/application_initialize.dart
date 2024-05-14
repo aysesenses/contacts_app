@@ -4,7 +4,6 @@ import 'package:contacts_app/product/init/config/app_environment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kartal/kartal.dart';
-import 'package:logger/logger.dart';
 
 @immutable
 
@@ -17,7 +16,7 @@ class ApplicationInitialize {
     await runZonedGuarded<Future<void>>(
       _initialize,
       (error, stack) {
-        Logger().e(error);
+        debugPrint('ApplicationInitialize Error : $error');
       },
     );
   }
@@ -30,7 +29,7 @@ class ApplicationInitialize {
     FlutterError.onError = (details) {
       /// crashlytics log insert here
       /// custom service or custom logger insert here
-      Logger().e(details.exceptionAsString());
+      debugPrint(details.exceptionAsString());
     };
 
     AppEnvironment.general();
