@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 
-class BottomSheetWidget extends StatelessWidget {
-  const BottomSheetWidget({
+class SmallBottomSheetWidget extends StatelessWidget {
+  const SmallBottomSheetWidget({
     super.key,
     required this.bottomSheetContent,
   });
@@ -14,9 +14,10 @@ class BottomSheetWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.95,
+      height: MediaQuery.of(context).size.height * 0.4,
       decoration: _boxDecoration(context),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [bottomSheetContent],
       ),
