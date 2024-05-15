@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs
 
-import 'package:contacts_app/model/user_model.dart';
+import 'package:contacts_app/model/get_user/data.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:vexana/vexana.dart';
@@ -12,16 +12,16 @@ part 'user_response.g.dart';
 class UserResponse extends INetworkModel<UserResponse> with EquatableMixin {
   /// User Model properties
   UserResponse({
-    this.users,
+    this.data,
   });
 
   /// Get user from json
   factory UserResponse.fromJson(Map<String, dynamic> json) => _$UserResponseFromJson(json);
 
-  final List<UserModel>? users;
+  final Data? data;
 
   @override
-  List<Object?> get props => [users];
+  List<Object?> get props => [data];
 
   /// User model to map object
   @override
@@ -33,10 +33,10 @@ class UserResponse extends INetworkModel<UserResponse> with EquatableMixin {
   }
 
   UserResponse copyWith({
-    List<UserModel>? users,
+    Data? data,
   }) {
     return UserResponse(
-      users: users ?? this.users,
+      data: data ?? this.data,
     );
   }
 }

@@ -19,7 +19,6 @@ class ProductNetworkManager extends NetworkManager<ErrorResponse> {
           options: BaseOptions(
             baseUrl: AppEnvironmentItems.baseUrl.value,
             headers: {'ApiKey': AppEnvironmentItems.apiKey.value},
-            queryParameters: {'skip': 0, 'take': 10},
           ),
         );
 
