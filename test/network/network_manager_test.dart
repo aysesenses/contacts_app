@@ -3,7 +3,7 @@ import 'package:contacts_app/model/base_response_model.dart';
 import 'package:contacts_app/model/base_user_response_model.dart';
 import 'package:contacts_app/model/get_user/user_response.dart';
 import 'package:contacts_app/product/init/config/app_environment.dart';
-import 'package:contacts_app/service/api_service_manager.dart';
+import 'package:contacts_app/service/manager/api_service_manager.dart';
 import 'package:contacts_app/service/product_service_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

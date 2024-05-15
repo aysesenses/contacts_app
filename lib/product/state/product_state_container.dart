@@ -1,5 +1,5 @@
 import 'package:contacts_app/screens/product_viewmodel.dart';
-import 'package:contacts_app/service/api_service_manager.dart';
+import 'package:contacts_app/service/manager/api_service_manager.dart';
 import 'package:get_it/get_it.dart';
 
 /// Product container for dependency injection
