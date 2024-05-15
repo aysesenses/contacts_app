@@ -11,6 +11,8 @@ class ProductNetworkErrorManager {
   void handleError(int value) {
     if (value == HttpStatus.unauthorized) {
       debugPrint('ProductNetworkErrorManager : HttpStatus unauthorized ');
+    } else if (value == HttpStatus.badGateway) {
+      debugPrint('ProductNetworkErrorManager : HttpStatus badGateway');
     }
   }
 }

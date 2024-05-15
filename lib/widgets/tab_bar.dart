@@ -6,13 +6,16 @@ class TabBarWidget extends StatelessWidget {
   const TabBarWidget({
     super.key,
     required this.onCancelPressed,
-    required this.onDonePressed,
+    required this.onActionPressed,
     this.title,
+    required this.actionButtonText,
   });
 
   final String? title;
+  final String actionButtonText;
+
   final VoidCallback? onCancelPressed;
-  final VoidCallback? onDonePressed;
+  final VoidCallback? onActionPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +31,9 @@ class TabBarWidget extends StatelessWidget {
           style: _boldText(),
         ),
         TextButton(
-          onPressed: onCancelPressed,
+          onPressed: onActionPressed,
           child: Text(
-            'Done',
+            actionButtonText,
             style: _boldText(),
           ),
         )

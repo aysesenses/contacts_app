@@ -1,7 +1,9 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:contacts_app/product/generated/colors.gen.dart';
+import 'package:contacts_app/widgets/network_image/project_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 
 class ItemUserWidget extends StatelessWidget {
   const ItemUserWidget({
@@ -18,19 +20,19 @@ class ItemUserWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: context.padding.normal * 0.5,
       child: Card(
-        shape: _cardShape(),
+        elevation: 0,
+        color: Colors.white,
+        shape: _cardShape(context),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: context.padding.normal,
           child: Row(
             children: [
-              CircleAvatar(
-                radius: 17,
-                backgroundColor: Colors.transparent,
-                backgroundImage: NetworkImage(url),
+              ProjectNetworkImage(
+                url: url,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: context.sized.normalValue),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -40,9 +42,9 @@ class ItemUserWidget extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(width: context.sized.normalValue),
                   Text(
-                    phoneNumber,
+                    '+$phoneNumber',
                     style: const TextStyle(color: ColorName.gray),
                   ),
                 ],
@@ -54,9 +56,9 @@ class ItemUserWidget extends StatelessWidget {
     );
   }
 
-  RoundedRectangleBorder _cardShape() {
+  RoundedRectangleBorder _cardShape(BuildContext context) {
     return RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: context.border.normalBorderRadius,
     );
   }
 }

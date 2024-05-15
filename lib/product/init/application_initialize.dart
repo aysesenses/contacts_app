@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:contacts_app/product/init/config/app_environment.dart';
+import 'package:contacts_app/product/state/product_state_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kartal/kartal.dart';
@@ -33,5 +34,7 @@ class ApplicationInitialize {
     };
 
     AppEnvironment.general();
+
+    ProductContainer.setup();
   }
 }
